@@ -8,10 +8,6 @@
   <h2> Profile Siswa</h2>
   <br>
     <div class="row">
-
-
-      @foreach ($siswa as $sisw)
-          
       
       <div class="col-lg-6">
         <div class="card mb-6">
@@ -60,7 +56,6 @@
         </div>  
       </div>
     </div>
-    @endforeach
   </div>
 </section>
 

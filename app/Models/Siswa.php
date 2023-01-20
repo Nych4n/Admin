@@ -9,14 +9,11 @@ class Siswa extends Model
 {
     use HasFactory;
 
-    protected $table = 'siswa';
-    protected $primaryKey = 'id';
-
     protected $fillable = [
         'NIS','NamaSiswa','Alamat'
     ];
 
-    public function Nilai()
+    public function nilai()
     {
         return $this->hasMany(Nilai::class);
     }

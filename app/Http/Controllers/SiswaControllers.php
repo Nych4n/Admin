@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class SiswaControllers extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource
      *
      * @return \Illuminate\Http\Response
      */
@@ -58,8 +58,7 @@ class SiswaControllers extends Controller
      */
     public function show(Siswa $sisw) 
     {
-        $siswa = Nilai ::where('id',$sisw->id)->paginate();
-       // dd($sisw->pwpb);
+        $siswa = Nilai::where('id',$sisw->id)->paginate();
         
         return view('sisw.show',compact('siswa'));
     }
