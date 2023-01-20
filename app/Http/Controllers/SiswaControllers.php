@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Siswa;
+use App\Models\Nilai;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -55,10 +56,12 @@ class SiswaControllers extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Siswa $sisw)
+    public function show(Siswa $sisw) 
     {
-        $sisw = Nilai ::first()->where('id',$sisw->id)->get();
-        return view('sisw.show',compact('sisw'));
+        $siswa = Nilai ::where('id',$sisw->id)->paginate();
+       // dd($sisw->pwpb);
+        
+        return view('sisw.show',compact('siswa'));
     }
 
     /**
